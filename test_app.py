@@ -1,7 +1,7 @@
-import main
+import app
 
 def test_index():
-    assert main.index() == "Dit was de laatste opdracht"
+    assert app.index() == "Dit was de laatste opdracht"
 
 def test_Stefan():
-    assert main.Stefan() == "Goed Bezig Stefan!"
+    assert app.Stefan() == "Goed Bezig Stefan!"
