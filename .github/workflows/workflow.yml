@@ -15,33 +15,33 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-      - name: Setup Python
-        uses: actions/setup-python@v2.2.2
-        with:
-          python-version: '3.10.0'
-      - name: Install Dependencies
-        run: pip install -r requirements.txt
-      - name: Run tests with Pytest
-        run: pytest
+#      - name: Setup Python
+#        uses: actions/setup-python@v2.2.2
+#        with:
+#          python-version: '3.10.0'
+#      - name: Install Dependencies
+#        run: pip install -r requirements.txt
+#      - name: Run tests with Pytest
+#        run: pytest
   
-  deploy:
-    needs: run-tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v2
-      - name: Deploy Flask app 
-        uses: appleboy/ssh-action@v0.1.2
-        with:
-          host: ${{secrets.SSH_HOST}}
-          username: ${{secrets.SSH_USERNAME}}
-          key: ${{secrets.SSH_KEY}}
-          passphrase: ${{ secrets.SSH_PASS }}
-          script: |
-            echo 'Welcome to my server'
-            cd /home/CD_Stefan
-            git pull
-            echo 'Lets see if the change happened'
-            cd
-            systemctl restart CD_Stefan
-            echo 'Restart complete'
+#  deploy:
+#    needs: run-tests
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: checkout
+#        uses: actions/checkout@v2
+#      - name: Deploy Flask app 
+#        uses: appleboy/ssh-action@v0.1.2
+#        with:
+#          host: ${{secrets.SSH_HOST}}
+#          username: ${{secrets.SSH_USERNAME}}
+#          key: ${{secrets.SSH_KEY}}
+#          passphrase: ${{ secrets.SSH_PASS }}
+#          script: |
+#            echo 'Welcome to my server'
+#            cd /home/CD_Stefan
+#            git pull
+#            echo 'Lets see if the change happened'
+#            cd
+#            systemctl restart CD_Stefan
+#            echo 'Restart complete'
