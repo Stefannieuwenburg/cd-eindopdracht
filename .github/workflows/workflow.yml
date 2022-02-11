@@ -20,8 +20,8 @@ jobs:
 
   deploy:
       runs-on: ubuntu-20.04
-      needs: run-test # this job depends on "test" having finished
-      if: github.ref == 'refs/heads/main' # only execute this step if we're on our main branch
+      needs: run-test 
+      if: github.ref == 'refs/heads/main' 
       steps:
         - name: executing remote ssh commands using ssh key
           uses: appleboy/ssh-action@master
