@@ -34,9 +34,9 @@ jobs:
         uses: appleboy/ssh-action@v0.1.2
         with:
           host: ${{secrets.SSH_HOST}}
-          username: ${{secrets.SSH_USERNAME}}
           key: ${{secrets.SSH_KEY}}
-          passphrase: ${{ secrets.SSH_PASS }}
+          username: ${{secrets.SSH_USERNAME}}
+         # passphrase: ${{ secrets.SSH_PASS }}
           script: |
             echo 'Welcome to my server'
             cd /home/CD_Stefan
@@ -45,3 +45,4 @@ jobs:
             cd
             systemctl restart CD_Stefan
             echo 'Restart complete'
+            
