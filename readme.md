@@ -12,7 +12,7 @@ Gunicorn was my biggest hurdle in the whole process. Even after successfully run
 The solution was to learn to ‘read more ant dive in to it’. 
 
 ### SSH connection ######
-Creating a valid SSH connection between github and the VPS served a lot more complications than initially necessary. As I’m working on Windows, the ‘easy’ method of creating an SSH-key.
+Creating a valid SSH connection between github and the VPS served a lot more complications than i whas thinking befor. 
 
 ### Nginx / app.service #####
 In the linux terminal the format of an error is less descriptive than I would have hoped for. 
