@@ -36,7 +36,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
           key: ${{secrets.SSH_KEY}}
-         # passphrase: ${{ secrets.SSH_PASS }}
+          passphrase: ${{ secrets.SSH_PASS }}
           script: |
             echo 'Welcome to my server'
             cd /home/CD_Stefan
