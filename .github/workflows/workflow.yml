@@ -28,6 +28,6 @@ jobs:
       - name: Adding known hosts
         run: ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
       - name: Deploy with Rsync
-        run: rsync -avz ./dist/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/
+        run: rsync -avz ./dist/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/CD_Stefan
       - name: Restart Application
         run: ssh -t ${{secrets.SSH_USERNAME}}@${{secrets.SSH_HOST}} 'sudo systemctl restart CD_Stefan
