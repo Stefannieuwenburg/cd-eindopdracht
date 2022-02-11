@@ -34,4 +34,4 @@ jobs:
         run: rsync -avz ./dist/ ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/home/CD_Stefan
       # Restart the application
       - name: Restart Application
-        run: ssh -t ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} 'sudo systemctl restart CD_Stefan
+        run: ssh -t ${{secrets.SSH_USER}}@${{secrets.SSH_HOST}} 'sudo systemctl restart CD_Stefan
