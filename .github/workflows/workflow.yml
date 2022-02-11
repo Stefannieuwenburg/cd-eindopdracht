@@ -43,5 +43,5 @@ jobs:
             echo 'Lets see if the change happened'
             cd
             systemctl restart CD_Stefan
-            echo 'Restart complete'
+            echo'Restart complete'
             
