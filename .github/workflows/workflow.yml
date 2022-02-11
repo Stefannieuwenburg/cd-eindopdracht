@@ -27,13 +27,15 @@ jobs:
     needs: run-tests
     runs-on: ubuntu-latest
     steps:
-      - name: executing remote ssh commands using ssh key
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: Deploy Flask app 
         uses: appleboy/ssh-action@master
         with:
           host: ${{secrets.SSH_HOST}}
           key: ${{secrets.SSH_KEY}}
           username: ${{secrets.SSH_USERNAME}}
-          port: ${{ secrets.PORT }}
+          passphrase: ${{ secrets.SSH_PASS }}
           script: 
             echo 'Welcome to my server'
             cd /home/CD_Stefan
