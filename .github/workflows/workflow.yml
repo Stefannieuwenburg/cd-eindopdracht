@@ -38,10 +38,9 @@ jobs:
           passphrase: ${{ secrets.SSH_PASS }}
           script: 
             echo 'Welcome to my server'
+            cd ..
             cd /home/CD_Stefan
             git pull
-            echo 'Lets see if the change happened'
-            cd
-            systemctl restart CD_Stefan
+            systemctl restart cd
             echo'Restart complete'
             
